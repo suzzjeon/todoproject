@@ -1,24 +1,18 @@
 import React, { useState } from 'react';
 
 const AddTodoForm = ({ addTodo }) => {
-  const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
+  const [todo, setTodo] = useState({ title: '', body: '' });
 
   const onChangeHandler = (e) => {
     const { name, value } = e.target;
-    if (name === 'title') {
-      setTitle(value);
-    } else if (name === 'body') {
-      setBody(value);
-    }
+    setTodo((prevTodo) => ({ ...prevTodo, [name]: value }));
   };
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    const newTodo = { id: Date.now(), title, body, isDone: false };
+    const newTodo = { id: Date.now(), ...todo, isDone: false };
     addTodo(newTodo);
-    setTitle('');
-    setBody('');
+    setTodo({ title: '', body: '' });
   };
 
   return (
@@ -26,14 +20,14 @@ const AddTodoForm = ({ addTodo }) => {
       <input
         type="text"
         name="title"
-        value={title}
+        value={todo.title}
         onChange={onChangeHandler}
         placeholder="제목"
         required
       />
       <textarea
         name="body"
-        value={body}
+        value={todo.body}
         onChange={onChangeHandler}
         placeholder="내용"
         required
