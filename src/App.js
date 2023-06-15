@@ -1,10 +1,11 @@
-import React from 'react';
-import AddTodoForm from './components/AddTodoForm';
-import TodoList from './components/TodoList';
-import { useLocalStorage } from './components/UseLocalStorage';
+import React from "react";
+import AddTodoForm from "./components/AddTodoForm";
+import TodoList from "./components/TodoList";
+import { useLocalStorage } from "./components/UseLocalStorage";
+import './App.css';
 
 const App = () => {
-  const [todos, setTodos] = useLocalStorage('todos', []);
+  const [todos, setTodos] = useLocalStorage("todos", []);
 
   const addTodo = (todo) => {
     setTodos([...todos, todo]);
@@ -23,8 +24,8 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h1>To-Do App</h1>
+    <div className="app-container">
+      <h1>let's burn ❤️‍🔥</h1>
       <AddTodoForm addTodo={addTodo} />
       <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
     </div>

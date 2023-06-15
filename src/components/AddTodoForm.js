@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './AddTodoForm.css';
 
 const AddTodoForm = ({ addTodo }) => {
   const [todo, setTodo] = useState({ title: '', body: '' });
@@ -19,22 +20,28 @@ const AddTodoForm = ({ addTodo }) => {
 
   return (
     <form onSubmit={onSubmitHandler}>
-      <input
-        type="text"
-        name="title"
-        value={todo.title}
-        onChange={onChangeHandler}
-        placeholder="제목"
-        required
-      />
-      <textarea
-        name="body"
-        value={todo.body}
-        onChange={onChangeHandler}
-        placeholder="내용"
-        required
-      ></textarea>
-      <button type="submit">추가하기</button>
+      <div className="form-container">
+        <div className="input-container">
+          <input
+            type="text"
+            name="title"
+            value={todo.title}
+            onChange={onChangeHandler}
+            placeholder="Get fired up!"
+            className="input-field"
+            required
+          />
+          <textarea
+            name="body"
+            value={todo.body}
+            onChange={onChangeHandler}
+            placeholder="🚒🚨"
+            className="input-field"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" className="submit-button">🧨</button>
+      </div>
     </form>
   );
 };
