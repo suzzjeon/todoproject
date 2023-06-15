@@ -1,4 +1,3 @@
-![todo](https://github.com/suzzjeon/todoproject/assets/133937368/2bf9b356-4f60-49f3-83db-209bfcbab9d7)
 
 ### How To Use
 
@@ -22,17 +21,13 @@ $ yarn start
 
 ---
 
+![todo](https://github.com/suzzjeon/todoproject/assets/133937368/2bf9b356-4f60-49f3-83db-209bfcbab9d7)
+
+
 - Add Todo
-     - Easily add new todos using the AddTodoForm. Input fields are cleared after submission.
-
- - Update Todo Status
-    - Mark todos as done or delete them using the TodoItem component.
-
+- Update Todo Status
 - Display Todo List
-    - The TodoList component categorizes and displays the list of todos.
-
--  Local Storage Management:
-    - UseLocalStorage hook for state management with local storage.
+- Local Storage Management
 
 ### Components
 
