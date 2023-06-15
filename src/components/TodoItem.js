@@ -1,4 +1,5 @@
 import React from 'react';
+import './TodoItem.css';
 
 const TodoItem = ({ todo, toggleTodo, deleteTodo }) => {
   const { id, title, body, isDone } = todo;
@@ -12,12 +13,14 @@ const TodoItem = ({ todo, toggleTodo, deleteTodo }) => {
   };
 
   return (
-    <li>
-      <h3>{title}</h3>
-      <p>{body}</p>
-      <button onClick={handleToggle}>{isDone ? '취소' : '완료'}</button>
-      <button onClick={handleDelete}>삭제</button>
-    </li>
+    <div className="todo-card">
+      <h3 className="card-title">{title}</h3>
+      <p className="card-body">{body}</p>
+      <div className="button-container">
+        <button className="toggle-button" onClick={handleToggle}>{isDone ? '🪵' : '💣'}</button>
+        <button className="delete-button" onClick={handleDelete}>🧯</button>
+      </div>
+    </div>
   );
 };
 
