@@ -1,5 +1,4 @@
-<img width="800px" src=https://github.com/suzzjeon/todoproject/assets/133937368/870b6b55-2d55-42c9-9654-a603012a8bb8/>
-
+![todo](https://github.com/suzzjeon/todoproject/assets/133937368/2bf9b356-4f60-49f3-83db-209bfcbab9d7)
 
 ### How To Use
 
