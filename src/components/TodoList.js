@@ -16,11 +16,15 @@ const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
   const doneTodos = todos.filter((todo) => todo.isDone);
 
   return (
-    <div>
+    <div className="todo-list">
       <h2>Working.. 🔥</h2>
-      <ul>{renderTodos(workingTodos)}</ul>
+      <div className="todo-card-container">
+        {renderTodos(workingTodos)}
+      </div>
       <h2>Done..! 🎉</h2>
-      <ul>{renderTodos(doneTodos)}</ul>
+      <div className="todo-card-container">
+        {renderTodos(doneTodos)}
+      </div>
     </div>
   );
 };
