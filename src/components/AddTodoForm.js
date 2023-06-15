@@ -10,9 +10,11 @@ const AddTodoForm = ({ addTodo }) => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    const newTodo = { id: Date.now(), ...todo, isDone: false };
-    addTodo(newTodo);
-    setTodo({ title: '', body: '' });
+    if (todo.title.trim() !== '' && todo.body.trim() !== '') {
+      const newTodo = { id: Date.now(), ...todo, isDone: false };
+      addTodo(newTodo);
+      setTodo({ title: '', body: '' });
+    }
   };
 
   return (

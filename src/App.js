@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import AddTodoForm from './components/AddTodoForm';
 import TodoList from './components/TodoList';
+import { useLocalStorage } from './components/UseLocalStorage';
 
 const App = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useLocalStorage('todos', []);
 
   const addTodo = (todo) => {
     setTodos([...todos, todo]);
