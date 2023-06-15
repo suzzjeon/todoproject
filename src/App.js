@@ -25,7 +25,7 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <h1>📝</h1>
+      <h1>let's burn ❤️‍🔥</h1>
       <AddTodoForm addTodo={addTodo} />
       <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
     </div>

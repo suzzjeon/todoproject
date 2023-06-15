@@ -17,11 +17,11 @@ const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
 
   return (
     <div className="todo-list">
-      <h2>Working.. 🔥</h2>
+      <h2> Burning .. 🔥</h2>
       <div className="todo-card-container">
         {renderTodos(workingTodos)}
       </div>
-      <h2>Done..! 🎉</h2>
+      <h2> Fireworks .. 🎆💃💥☄️  </h2>
       <div className="todo-card-container">
         {renderTodos(doneTodos)}
       </div>

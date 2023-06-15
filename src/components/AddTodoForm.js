@@ -27,7 +27,7 @@ const AddTodoForm = ({ addTodo }) => {
             name="title"
             value={todo.title}
             onChange={onChangeHandler}
-            placeholder="제목을 입력해주세요"
+            placeholder="Get fired up!"
             className="input-field"
             required
           />
@@ -35,12 +35,12 @@ const AddTodoForm = ({ addTodo }) => {
             name="body"
             value={todo.body}
             onChange={onChangeHandler}
-            placeholder="내용을 입력해주세요"
+            placeholder="🚒🚨"
             className="input-field"
             required
           ></textarea>
         </div>
-        <button type="submit" className="submit-button">추가하기</button>
+        <button type="submit" className="submit-button">🧨</button>
       </div>
     </form>
   );
