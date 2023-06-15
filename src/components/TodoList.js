@@ -21,12 +21,13 @@ const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
       <div className="todo-card-container">
         {renderTodos(workingTodos)}
       </div>
-      <h2> Fireworks .. 🎆💃💥☄️  </h2>
+      <h2> Fireworks .. 💥 </h2>
       <div className="todo-card-container">
         {renderTodos(doneTodos)}
       </div>
     </div>
   );
 };
+
 
 export default TodoList;

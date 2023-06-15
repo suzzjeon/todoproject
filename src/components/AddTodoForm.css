@@ -6,13 +6,15 @@
   
   .input-container {
     flex-grow: 1;
-    margin-right: 10px;
+    margin-right: 5px;
   }
   
   .input-field {
     width: 95%;
     padding: 0.5rem;
     margin-bottom: 10px;
+    border: 1px solid gray;
+    border-radius: 0.5rem;
   }
 
   .input-field::placeholder {
@@ -21,10 +23,11 @@
   
   .submit-button {
     padding: 0.5rem;
-    background-color: #fff;
+    background-color: transparent;
     border: none;
+    border-radius: 20rem;
     cursor: pointer;
-    font-size: 3rem; /* 이모지 크기 조정 */
+    font-size: 3rem;
   }
   
   
