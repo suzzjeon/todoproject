@@ -7,8 +7,8 @@ const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
       <TodoItem
         key={todo.id}
         todo={todo}
-        toggleTodo={toggleTodo}
-        deleteTodo={deleteTodo}
+        toggleTodo={() => toggleTodo(todo.id)}
+        deleteTodo={() => deleteTodo(todo.id)}
       />
     ));
 
@@ -28,6 +28,5 @@ const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
     </div>
   );
 };
-
 
 export default TodoList;
