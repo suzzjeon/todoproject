@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import './AddTodoForm.css';
+import React, { useState } from "react";
+import "./AddTodoForm.css";
 
 const AddTodoForm = ({ addTodo }) => {
-  const [todo, setTodo] = useState({ title: '', body: '' });
+  const [todo, setTodo] = useState({ title: "", body: "" });
 
   const onChangeHandler = (e) => {
     const { name, value } = e.target;
@@ -11,10 +11,10 @@ const AddTodoForm = ({ addTodo }) => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    if (todo.title.trim() !== '' && todo.body.trim() !== '') {
+    if (todo.title.trim() !== "" && todo.body.trim() !== "") {
       const newTodo = { id: Date.now(), ...todo, isDone: false };
       addTodo(newTodo);
-      setTodo({ title: '', body: '' });
+      setTodo({ title: "", body: "" });
     }
   };
 
@@ -40,7 +40,9 @@ const AddTodoForm = ({ addTodo }) => {
             required
           ></textarea>
         </div>
-        <button type="submit" className="submit-button">🧨</button>
+        <button type="submit" className="submit-button">
+          🧨
+        </button>
       </div>
     </form>
   );

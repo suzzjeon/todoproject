@@ -1,5 +1,5 @@
-import React from 'react';
-import TodoItem from './TodoItem';
+import React from "react";
+import TodoItem from "./TodoItem";
 
 const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
   const renderTodos = (todoList) =>
@@ -18,13 +18,9 @@ const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
   return (
     <div className="todo-list">
       <h2> Burning .. 🔥</h2>
-      <div className="todo-card-container">
-        {renderTodos(workingTodos)}
-      </div>
+      <div className="todo-card-container">{renderTodos(workingTodos)}</div>
       <h2> Fireworks .. 💥 </h2>
-      <div className="todo-card-container">
-        {renderTodos(doneTodos)}
-      </div>
+      <div className="todo-card-container">{renderTodos(doneTodos)}</div>
     </div>
   );
 };
