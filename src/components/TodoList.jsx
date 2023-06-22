@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import TodoItem from "./TodoItem";
 
 const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
@@ -16,13 +17,21 @@ const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
   const doneTodos = todos.filter((todo) => todo.isDone);
 
   return (
-    <div className="todo-list">
+    <StTodoList>
       <h2> Burning .. 🔥</h2>
       <div className="todo-card-container">{renderTodos(workingTodos)}</div>
       <h2> Fireworks .. 💥 </h2>
       <div className="todo-card-container">{renderTodos(doneTodos)}</div>
-    </div>
+    </StTodoList>
   );
 };
 
 export default TodoList;
+
+const StTodoList = styled.div`
+  .todo-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+`;

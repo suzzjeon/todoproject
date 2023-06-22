@@ -1,4 +1,3 @@
-
 ### How To Use
 
 ---
@@ -23,7 +22,6 @@ $ yarn start
 
 ![todo](https://github.com/suzzjeon/todoproject/assets/133937368/2bf9b356-4f60-49f3-83db-209bfcbab9d7)
 
-
 - Add Todo
 - Update Todo Status
 - Display Todo List
@@ -33,14 +31,14 @@ $ yarn start
 
 ---
 
-- AddTodoForm: 
-    - Allows users to add new todos with a form. Clears input fields after submission.
+- AddTodoForm:
 
-- TodoItem: 
-    - Represents a single todo item. Provides options to mark as done or delete.
+  - Allows users to add new todos with a form. Clears input fields after submission.
 
-- TodoList: 
-    - Displays the list of todos. Renders TodoItem for each todo..
+- TodoItem:
 
-- UseLocalStorage: 
-    - Custom hook for managing state with local storage.
+  - Represents a single todo item. Provides options to mark as done or delete.
+
+- TodoList:
+
+  - Displays the list of todos. Renders TodoItem for each todo.
