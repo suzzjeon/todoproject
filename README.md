@@ -1,4 +1,8 @@
-### How To Use
+# [Todo Project](https://todoproject-suzzjeon.vercel.app/)
+
+This is a simple web application for managing todo items. You can add new todos, update their status, and view the todo list.
+
+## How To Use
 
 ---
 
@@ -20,12 +24,10 @@ $ yarn start
 
 ---
 
-![todo](https://github.com/suzzjeon/todoproject/assets/133937368/2bf9b356-4f60-49f3-83db-209bfcbab9d7)
-
 - Add Todo
 - Update Todo Status
 - Display Todo List
-- Local Storage Management
+- View Todo Details
 
 ### Components
 
