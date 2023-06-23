@@ -1,20 +1,17 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import TodoItem from "./TodoItem";
 
-const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
-  const renderTodos = (todoList) =>
-    todoList.map((todo) => (
-      <TodoItem
-        key={todo.id}
-        todo={todo}
-        toggleTodo={() => toggleTodo(todo.id)}
-        deleteTodo={() => deleteTodo(todo.id)}
-      />
-    ));
+const TodoList = () => {
+  const { todoList } = useSelector((state) => state.todoList);
 
-  const workingTodos = todos.filter((todo) => !todo.isDone);
-  const doneTodos = todos.filter((todo) => todo.isDone);
+  const renderTodos = (todoList) => {
+    return todoList.map((todo) => <TodoItem key={todo.id} todo={todo} />);
+  };
+
+  const workingTodos = todoList.filter((todo) => !todo.isDone);
+  const doneTodos = todoList.filter((todo) => todo.isDone);
 
   return (
     <StTodoList>

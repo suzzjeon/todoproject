@@ -1,11 +1,15 @@
+import { useDispatch } from "react-redux";
+import { addTodo } from "../redux/modules/todos";
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const AddTodoForm = ({ addTodo }) => {
+const AddTodoForm = () => {
   const [todo, setTodo] = useState({ title: "", body: "" });
+  const dispatch = useDispatch();
 
   const onChangeHandler = (e) => {
     const { name, value } = e.target;
+
     setTodo((prevTodo) => ({ ...prevTodo, [name]: value }));
   };
 
@@ -13,7 +17,8 @@ const AddTodoForm = ({ addTodo }) => {
     e.preventDefault();
     if (todo.title.trim() !== "" && todo.body.trim() !== "") {
       const newTodo = { id: Date.now(), ...todo, isDone: false };
-      addTodo(newTodo);
+      dispatch(addTodo(newTodo));
+
       setTodo({ title: "", body: "" });
     }
   };

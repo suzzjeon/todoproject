@@ -1,28 +1,31 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { toggleTodo, deleteTodo } from "../redux/modules/todos";
 import styled from "styled-components";
 
-const TodoItem = ({ todo, toggleTodo, deleteTodo }) => {
+const TodoItem = ({ todo }) => {
   const { id, title, body, isDone } = todo;
+  const dispatch = useDispatch();
 
-  const handleToggle = () => {
-    toggleTodo(id);
+  const toggleTodoHandler = () => {
+    dispatch(toggleTodo(id));
   };
 
-  const handleDelete = () => {
-    deleteTodo(id);
+  const deleteTodoHandler = () => {
+    dispatch(deleteTodo(id));
   };
 
   return (
     <TodoCard>
-      <Link to={`/Detail/${id}`}>상세보기</Link>
+      <StyleLink to={`/Detail/${id}`}>상세보기</StyleLink>
       <CardTitle>{title}</CardTitle>
       <CardBody>{body}</CardBody>
       <ButtonContainer>
-        <ToggleButton onClick={handleToggle}>
+        <ToggleButton onClick={toggleTodoHandler}>
           {isDone ? "🪵" : "💣"}
         </ToggleButton>
-        <DeleteButton onClick={handleDelete}>🧯</DeleteButton>
+        <DeleteButton onClick={deleteTodoHandler}>🧯</DeleteButton>
       </ButtonContainer>
     </TodoCard>
   );
@@ -75,7 +78,19 @@ const DeleteButton = styled.button`
   cursor: pointer;
   border: none;
   background-color: #fff;
-  font-size: 2em;
+  font-size: 2rem;
+
+  &:hover {
+    box-shadow: 0px 0px 10px 2px rgba(255, 0, 0, 0.5);
+  }
+`;
+
+const StyleLink = styled(Link)`
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fd6f6f;
+  font-size: 14px;
+  font-weight: 400;
 
   &:hover {
     box-shadow: 0px 0px 10px 2px rgba(255, 0, 0, 0.5);

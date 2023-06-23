@@ -1,10 +1,20 @@
 import { combineReducers, createStore } from "redux";
-import { todoList } from "../modules/todos";
+import { persistReducer, persistStore } from "redux-persist";
+import todoList from "../modules/todos";
+import storage from "redux-persist/lib/storage";
+
+const persistConfig = {
+  key: "todo",
+  storage,
+};
 
 const rootReducer = combineReducers({
   todoList,
 });
 
-const store = createStore(rootReducer);
+const enhanceReducer = persistReducer(persistConfig, rootReducer);
 
-export default store;
+const store = createStore(enhanceReducer);
+const persistor = persistStore(store);
+
+export { store, persistor };

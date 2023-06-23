@@ -10,11 +10,24 @@ export const deleteTodo = (id) => ({ type: DELETE_TODO, payload: id });
 
 // 초기 상태 정의
 const initialState = {
-  todoList: [],
+  todoList: [
+    {
+      id: 1,
+      title: "끝내주게 자기",
+      body: "아침 8시까지 풀 숙면 취하기",
+      isDone: true,
+    },
+    {
+      id: 2,
+      title: "끝내주게 놀기",
+      body: "노래방 갔다가 취해서 귀가하기",
+      isDone: false,
+    },
+  ],
 };
 
 // 리듀서 함수
-export const todoListReducer = (state = initialState, action) => {
+const todoList = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO:
       return {
@@ -38,9 +51,4 @@ export const todoListReducer = (state = initialState, action) => {
   }
 };
 
-export const todoList = {
-  addTodo,
-  toggleTodo,
-  deleteTodo,
-  todoListReducer,
-};
+export default todoList;
