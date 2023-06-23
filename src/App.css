@@ -1,4 +1,3 @@
-
 body {
   background-color: #ffffff;
 }
@@ -23,7 +22,7 @@ h1 {
 /* Adjust background image */
 body::after {
   content: "";
-  background-image: url('spiral.png');
+  background-image: url("spiral.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
