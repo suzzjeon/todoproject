@@ -1,20 +1,12 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { toggleTodo, deleteTodo } from "../redux/modules/todos";
 import styled from "styled-components";
+import usePost from "../hook/usePost";
 
 const TodoItem = ({ todo }) => {
   const { id, title, body, isDone } = todo;
-  const dispatch = useDispatch();
-
-  const toggleTodoHandler = () => {
-    dispatch(toggleTodo(id));
-  };
-
-  const deleteTodoHandler = () => {
-    dispatch(deleteTodo(id));
-  };
+  const postHandler = usePost();
 
   return (
     <TodoCard>
@@ -22,10 +14,12 @@ const TodoItem = ({ todo }) => {
       <CardTitle>{title}</CardTitle>
       <CardBody>{body}</CardBody>
       <ButtonContainer>
-        <ToggleButton onClick={toggleTodoHandler}>
+        <ToggleButton onClick={() => postHandler(toggleTodo, id)}>
           {isDone ? "🪵" : "💣"}
         </ToggleButton>
-        <DeleteButton onClick={deleteTodoHandler}>🧯</DeleteButton>
+        <DeleteButton onClick={() => postHandler(deleteTodo, id)}>
+          🧯
+        </DeleteButton>
       </ButtonContainer>
     </TodoCard>
   );

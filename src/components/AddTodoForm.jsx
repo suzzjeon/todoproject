@@ -1,25 +1,19 @@
 import { useDispatch } from "react-redux";
 import { addTodo } from "../redux/modules/todos";
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
+import useInput from "../hook/useInput";
 
 const AddTodoForm = () => {
-  const [todo, setTodo] = useState({ title: "", body: "" });
+  const [title, onChangeTitleHandler] = useInput("");
+  const [body, onChangeBodyHandler] = useInput("");
   const dispatch = useDispatch();
-
-  const onChangeHandler = (e) => {
-    const { name, value } = e.target;
-
-    setTodo((prevTodo) => ({ ...prevTodo, [name]: value }));
-  };
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    if (todo.title.trim() !== "" && todo.body.trim() !== "") {
-      const newTodo = { id: Date.now(), ...todo, isDone: false };
+    if (title.trim() !== "" && body.trim() !== "") {
+      const newTodo = { id: Date.now(), title, body, isDone: false };
       dispatch(addTodo(newTodo));
-
-      setTodo({ title: "", body: "" });
     }
   };
 
@@ -30,15 +24,15 @@ const AddTodoForm = () => {
           <InputField
             type="text"
             name="title"
-            value={todo.title}
-            onChange={onChangeHandler}
+            value={title}
+            onChange={onChangeTitleHandler}
             placeholder="Get fired up!"
             required
           />
           <TextArea
             name="body"
-            value={todo.body}
-            onChange={onChangeHandler}
+            value={body}
+            onChange={onChangeBodyHandler}
             placeholder="🚒🚨"
             required
           ></TextArea>
